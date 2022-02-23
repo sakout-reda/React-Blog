@@ -2,7 +2,7 @@ import { useState } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
-  const title="All Blogs";
+  const title = "All Blogs";
   const [blogs, setBlogs] = useState([
     { title: 'My new website', body: 'lorem ipsum...', author: 'mario', id: 1 },
     { title: 'Welcome party!', body: 'lorem ipsum...', author: 'yoshi', id: 2 },
@@ -10,10 +10,17 @@ const Home = () => {
 
   ]);
 
+  const deleteBlog = (id) =>{
+    const newBlogs=blogs.filter(blog => blog.id !== id);
+    setBlogs(newBlogs);
+
+  }
+
+
   return (
     <div className="home">
-      <BlogList blogs={blogs} title={title} />
-      <BlogList blogs={blogs.filter((blog) => blog.author === 'luigi')} title="Luigi blogs" />
+      <BlogList blogs={blogs} title={title} deleteBlog={deleteBlog}/>
+      {/*       <BlogList blogs={blogs.filter((blog) => blog.author === 'luigi')} title="Luigi blogs" /> */}
     </div>
   );
 }
