@@ -13,12 +13,6 @@ function App() {
 
       <div className="content">
       <Home/>
-        {/* <h1>{title}</h1>
-        <p>Liked {likes} times</p>
-        <p>{person.age}</p>
-        <p>{person.name}</p>
-        <p>{Math.random()}</p>
-        <a href={link}>Google Site</a> */}
       </div>
     </div>
   );
